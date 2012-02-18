@@ -16,4 +16,7 @@ properties {
   if($solution.file -eq $null -or !(Test-Path $solution.file)) {
     $solution.file = "$($base.dir)\Toji.Tester.sln"
   }
+  if($nuget.target -eq $null -or !(Test-Path $nuget.target)) {
+    $nuget.target = "$($base.dir)\Toji.Tester.nuspec"
+  }
 }
