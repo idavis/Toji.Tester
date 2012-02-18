@@ -45,7 +45,9 @@ try {
   $nuget = "NuGet"
   if(-not($nuGetIsInPath)) {
     # default to the tools directory. If not found, we will search for it.
-    $nuget = Resolve-Path ".\Tools\Nuget\NuGet.exe"
+    if(Test-Path ".\Tools\Nuget\NuGet.exe") {
+      $nuget = Resolve-Path ".\Tools\Nuget\NuGet.exe"
+    }
   
     if($nuget -eq $null -or !(Test-Path($nuget))) {  
       $nugets = @(Get-ChildItem "..\*" -recurse -include NuGet.exe)
