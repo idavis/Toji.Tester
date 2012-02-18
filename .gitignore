@@ -19,3 +19,4 @@ _ReSharper*
 CI
 TestResult.xml
 build/psake/
+lib
