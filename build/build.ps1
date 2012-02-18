@@ -11,7 +11,7 @@
 # values provided on the command line will override all of these files below.
 Include settings.ps1
 #Include xunit.ps1
-Include nunit.ps1
+#Include nunit.ps1
 Include nuget.ps1
 Include msbuild.ps1
 Include assemblyinfo.ps1
@@ -25,7 +25,7 @@ properties {
 }
 
 Task Default -depends Initialize, Compile
-Task Release -depends Default, Package
+Task Release -depends Default #, Package
 Task Deploy -depends Publish
 
 Task Test { 

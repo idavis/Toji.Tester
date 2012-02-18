@@ -17,6 +17,7 @@
     </dependencies> -->
   </metadata>
   <files>
-      <file src="..\bin\Example.dll" target="lib\40" /> 
+    <file src="bin\**\*.dll" target="lib" exclude="bin\**\*.Test*.*" /> 
+    <file src="bin\**\*.pdb" target="lib" exclude="bin\**\*.Test*.*" />
   </files>
 </package>
