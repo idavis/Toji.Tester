@@ -11,7 +11,7 @@ namespace Example.Tests
     {
         [Test]
         public void TheMeaningOfLifeIs42()
-        
+        {
             Assert.AreEqual( 42, new Foo().MeaningOfLife );
         }
     }
