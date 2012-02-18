@@ -11,4 +11,9 @@
 
 properties {
   Write-Output "Loading override settings"
+  $packages.name = "packages"
+  $packages.dir = "$($base.dir)\$($packages.name)"
+  if($solution.file -eq $null -or !(Test-Path $solution.file)) {
+    $solution.file = "$($base.dir)\Toji.Tester.sln"
+  }
 }
