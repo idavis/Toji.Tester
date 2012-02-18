@@ -12,13 +12,13 @@
   [Parameter(Position=5, Mandatory=0)]
   [System.Collections.Hashtable]$properties = @{}
 )
-write-host $buildFile
+
 $scriptPath = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 $buildPath = (Resolve-Path $scriptPath\build)
 
 . $buildPath\bootstrap.ps1 $buildPath
 $psakeModule = @(Get-ChildItem $scriptPath\* -recurse -include psake.ps1)[0].FullName
-invoke-psake $buildFile $taskList $framework $docs $parameters $properties
-write-host "exit: $lastexitcode"
+. $psakeModule $buildFile $taskList $framework $docs $parameters $properties
+
 [Environment]::Exit($lastexitcode)
 #exit $lastexitcode
