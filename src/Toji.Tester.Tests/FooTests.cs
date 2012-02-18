@@ -12,7 +12,7 @@ namespace Example.Tests
         [Test]
         public void TheMeaningOfLifeIs42()
         {
-            Assert.AreEqual( 42, new Foo().MeaningOfLife );
+            Assert.AreNotEqual( 42, new Foo().MeaningOfLife );
         }
     }
 }
